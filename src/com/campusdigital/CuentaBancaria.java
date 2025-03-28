@@ -21,15 +21,9 @@ public abstract class CuentaBancaria implements Imprimible {
 	 * @param saldo
 	 */
 	public CuentaBancaria(Persona titular, String iban, double saldo) {
-		this.titular = titular;
+		this.setTitular(titular);
 		this.iban = iban;
 		this.saldo = saldo;
-	}
-
-	@Override
-	public String devolverInfoString() {
-		return "Nombre del titular: " + titular.nombre + "\napellidos del titular: " + titular.apellidos
-				+ "\nDNI del titular: " + titular.dni + "\niban: " + iban + "\saldo: " + saldo;
 	}
 
 	/**
@@ -58,6 +52,20 @@ public abstract class CuentaBancaria implements Imprimible {
 	 */
 	public void setIban(String iban) {
 		this.iban = iban;
+	}
+
+	/**
+	 * @return the titular
+	 */
+	public Persona getTitular() {
+		return titular;
+	}
+
+	/**
+	 * @param titular the titular to set
+	 */
+	public void setTitular(Persona titular) {
+		this.titular = titular;
 	}
 
 }

@@ -19,4 +19,18 @@ public abstract class CuentaCorriente extends CuentaBancaria {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @return the listaEntidades
+	 */
+	public String getListaEntidades() {
+		return listaEntidades;
+	}
+
+	/**
+	 * @param listaEntidades the listaEntidades to set
+	 */
+	public void setListaEntidades(String listaEntidades) {
+		this.listaEntidades = listaEntidades;
+	}
+
 }

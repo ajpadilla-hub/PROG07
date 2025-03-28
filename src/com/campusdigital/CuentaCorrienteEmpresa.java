@@ -19,4 +19,14 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente {
 		this.comisionPordescubierto = comisionPordescubierto;
 	}
 
+    @Override
+    public String devolverInfoString() {
+        return "Cuenta Corriente Empresa: " +
+               "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos() + ", " +
+               "IBAN: " + getIban() + ", " +
+               "Saldo: " + getSaldo() + "€, " +
+               "Entidades permitidas: " + getListaEntidades() + ", " +
+               "Interés por descubierto: " + tipoInteresDescubierto + "%, " +
+               "Comisión por descubierto: " + comisionPordescubierto + "€";
+    }
 }
