@@ -1,5 +1,10 @@
 package com.campusdigital;
 
+/**
+ * Clase que representa una cuenta corriente corriente
+ * 
+ * @author Àngel Padilla
+ */
 public abstract class CuentaCorriente extends CuentaBancaria {
 	String listaEntidades;
 
@@ -12,11 +17,6 @@ public abstract class CuentaCorriente extends CuentaBancaria {
 	public CuentaCorriente(Persona titular, String iban, double saldo, String listaEntidades) {
 		super(titular, iban, saldo);
 		this.listaEntidades = listaEntidades;
-	}
-
-	public CuentaCorriente(Persona titular, String iban, double saldo) {
-		super(titular, iban, saldo);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

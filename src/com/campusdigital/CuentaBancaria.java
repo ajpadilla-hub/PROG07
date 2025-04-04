@@ -1,19 +1,33 @@
 package com.campusdigital;
 
+/**
+ * Clase que representa una cuenta corriente bancaria
+ * 
+ * @author Àngel Padilla
+ */
 public abstract class CuentaBancaria implements Imprimible {
 
 	/**
-	 * 
+	 * Nombre, apellidos y DNI del titular
 	 */
 	private Persona titular;
 	/**
-	 * 
+	 * Número de cuenta del titulartitular
 	 */
 	private String iban;
 	/**
-	 * 
+	 * Saldo del titulartitular
 	 */
 	private double saldo;
+
+	/**
+	 * Método que devuelve todos los datos de la cuenta
+	 */
+	@Override
+	public String devolverInfoString() {
+		return "Cuenta Corriente Empresa: " + "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos()
+				+ ", " + "IBAN: " + getIban() + ", " + "Saldo: " + getSaldo();
+	}
 
 	/**
 	 * @param titular
