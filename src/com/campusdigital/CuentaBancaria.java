@@ -10,16 +10,15 @@ public abstract class CuentaBancaria implements Imprimible {
 	/**
 	 * Nombre, apellidos y DNI del titular
 	 */
-	private Persona titular;
+	protected Persona titular;
 	/**
 	 * Número de cuenta del titulartitular
 	 */
-	private String iban;
+	protected String iban;
 	/**
 	 * Saldo del titulartitular
 	 */
-	private double saldo;
-
+	protected double saldo;
 	/**
 	 * Método que devuelve todos los datos de la cuenta
 	 */
@@ -40,6 +39,7 @@ public abstract class CuentaBancaria implements Imprimible {
 		this.saldo = saldo;
 	}
 
+	public abstract boolean retirarSaldo(double cantidad);
 	/**
 	 * @return the iban
 	 */
@@ -81,5 +81,4 @@ public abstract class CuentaBancaria implements Imprimible {
 	public void setTitular(Persona titular) {
 		this.titular = titular;
 	}
-
 }

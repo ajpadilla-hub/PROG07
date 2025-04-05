@@ -38,13 +38,19 @@ public class CuentaAhorro extends CuentaBancaria {
 		this.tipoInteresAnual = tipoInteresAnual;
 	}
 
-//	/**
-//	 * Método que devuelve todos los datos de la cuenta
-//	 */
-//	@Override
-//	public String devolverInfoString() {
-//		return "Cuenta Ahorro: " + "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos() + ", "
-//				+ "IBAN: " + getIban() + ", " + "Saldo: " + getSaldo() + "€, " + "Interés Anual: " + tipoInteresAnual
-//				+ "%";
-//	}
+	@Override
+	public boolean retirarSaldo(double cantidad) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/**
+	 * Método que devuelve todos los datos de la cuenta
+	 */
+	@Override
+	public String devolverInfoString() {
+		return "Cuenta Ahorro: " + "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos() + ", "
+				+ "IBAN: " + getIban() + ", " + "Saldo: " + getSaldo() + "€, " + "Interés Anual: " + tipoInteresAnual
+				+ "%";
+	}
 }

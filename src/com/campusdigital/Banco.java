@@ -42,7 +42,9 @@ public class Banco {
 		String[] listado = new String[index];
 		for (int i = 0; i < index; i++) {
 			CuentaBancaria cuentaBancaria = cuentas[i];
-			listado[i] = ((CuentaBancaria) cuentaBancaria).devolverInfoString();
+			listado[i] = cuentaBancaria.getTitular().devolverInfoString() +
+					" con iban: " + cuentaBancaria.getIban() +
+					" con saldo de: " +  cuentaBancaria.getSaldo();
 		}
 		return listado;
 	}

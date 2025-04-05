@@ -32,5 +32,13 @@ public abstract class CuentaCorriente extends CuentaBancaria {
 	public void setListaEntidades(String listaEntidades) {
 		this.listaEntidades = listaEntidades;
 	}
-
+	/**
+	 * Método que devuelve todos los datos de la cuenta
+	 */
+	@Override
+	public String devolverInfoString() {
+		return "Cuenta Corriente Empresa: " + "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos()
+				+ ", " + "IBAN: " + getIban() + ", " + "Saldo: " + getSaldo()+ "Entidades permitidas: "
+						+ getListaEntidades();
+	}
 }

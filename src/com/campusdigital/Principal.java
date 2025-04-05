@@ -72,8 +72,11 @@ public class Principal {
 					double interesDescubierto = scanner.nextDouble();
 					System.out.print("Ingrese la comisión por descubierto: ");
 					double comisionDescubierto = scanner.nextDouble();
+					System.out.print("Ingrese el máximo por descubierto: ");
+					double maximoDescubierto = scanner.nextDouble();
+					
 					nuevaCuenta = new CuentaCorrienteEmpresa(titular, iban, saldo, "", interesDescubierto,
-							comisionDescubierto);
+							comisionDescubierto, maximoDescubierto);
 				} else {
 					System.out.println("Opción inválida.");
 					break;
