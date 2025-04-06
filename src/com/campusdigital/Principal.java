@@ -21,6 +21,7 @@ public class Principal {
 
 		final Scanner scanner = new Scanner(System.in);
 		String iban;
+		String listadoEntidades;
 		double saldo;
 		boolean ibanValido;
 		Banco b = new Banco();
@@ -62,20 +63,29 @@ public class Principal {
 				if (tipoCuenta == 1) {
 					System.out.print("Ingrese el tipo de interés anual: ");
 					double interes = scanner.nextDouble();
+					scanner.nextLine();
 					nuevaCuenta = new CuentaAhorro(titular, iban, saldo, interes);
 				} else if (tipoCuenta == 2) {
 					System.out.print("Ingrese la comisión de mantenimiento: ");
 					double comision = scanner.nextDouble();
-					nuevaCuenta = new CuentaCorrientePersonal(titular, iban, saldo, "", comision);
+					scanner.nextLine();
+
+					System.out.print("Ingrese el listado de entidades: ");
+					listadoEntidades = scanner.nextLine();
+					nuevaCuenta = new CuentaCorrientePersonal(titular, iban, saldo, listadoEntidades, comision);
 				} else if (tipoCuenta == 3) {
 					System.out.print("Ingrese el tipo de interés por descubierto: ");
 					double interesDescubierto = scanner.nextDouble();
+					scanner.nextLine();
 					System.out.print("Ingrese la comisión por descubierto: ");
 					double comisionDescubierto = scanner.nextDouble();
+					scanner.nextLine();
 					System.out.print("Ingrese el máximo por descubierto: ");
 					double maximoDescubierto = scanner.nextDouble();
-
-					nuevaCuenta = new CuentaCorrienteEmpresa(titular, iban, saldo, "", interesDescubierto,
+					scanner.nextLine();
+					System.out.print("Ingrese el listado de entidades: ");
+					listadoEntidades = scanner.nextLine();
+					nuevaCuenta = new CuentaCorrienteEmpresa(titular, iban, saldo, listadoEntidades, interesDescubierto,
 							comisionDescubierto, maximoDescubierto);
 				} else {
 					System.out.println("Opción inválida.");

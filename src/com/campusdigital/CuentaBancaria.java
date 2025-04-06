@@ -19,6 +19,7 @@ public abstract class CuentaBancaria implements Imprimible {
 	 * Saldo del titulartitular
 	 */
 	protected double saldo;
+
 	/**
 	 * Método que devuelve todos los datos de la cuenta
 	 */
@@ -39,7 +40,13 @@ public abstract class CuentaBancaria implements Imprimible {
 		this.saldo = saldo;
 	}
 
+	/**
+	 * 
+	 * @param cantidad cantidad a retirar del saldo
+	 * @return true | false si la operación es exitosa o no
+	 */
 	public abstract boolean retirarSaldo(double cantidad);
+
 	/**
 	 * @return the iban
 	 */
