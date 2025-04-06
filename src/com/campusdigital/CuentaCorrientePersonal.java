@@ -64,4 +64,19 @@ public class CuentaCorrientePersonal extends CuentaCorriente {
 			return false;
 		}
 	}
+
+	/**
+	 * @return the comisionMantenimiento
+	 */
+	public double getComisionMantenimiento() {
+		return comisionMantenimiento;
+	}
+
+	/**
+	 * @param comisionMantenimiento the comisionMantenimiento to set
+	 */
+	public void setComisionMantenimiento(double comisionMantenimiento) {
+		this.comisionMantenimiento = comisionMantenimiento;
+	}
+	
 }

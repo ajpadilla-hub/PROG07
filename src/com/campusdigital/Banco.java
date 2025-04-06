@@ -122,4 +122,32 @@ public class Banco {
 		}
 		return null;
 	}
+
+	/**
+	 * @return the cuentas
+	 */
+	public CuentaBancaria[] getCuentas() {
+		return cuentas;
+	}
+
+	/**
+	 * @param cuentas the cuentas to set
+	 */
+	public void setCuentas(CuentaBancaria[] cuentas) {
+		this.cuentas = cuentas;
+	}
+
+	/**
+	 * @return the index
+	 */
+	public int getIndex() {
+		return index;
+	}
+
+	/**
+	 * @param index the index to set
+	 */
+	public void setIndex(int index) {
+		this.index = index;
+	}
 }

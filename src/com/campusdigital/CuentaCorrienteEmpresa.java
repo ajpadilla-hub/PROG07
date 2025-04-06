@@ -90,4 +90,47 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente {
 		}
 	}
 
+	/**
+	 * @return the tipoInteresDescubierto
+	 */
+	public double getTipoInteresDescubierto() {
+		return tipoInteresDescubierto;
+	}
+
+	/**
+	 * @param tipoInteresDescubierto the tipoInteresDescubierto to set
+	 */
+	public void setTipoInteresDescubierto(double tipoInteresDescubierto) {
+		this.tipoInteresDescubierto = tipoInteresDescubierto;
+	}
+
+	/**
+	 * @return the comisionPordescubierto
+	 */
+	public double getComisionPordescubierto() {
+		return comisionPordescubierto;
+	}
+
+	/**
+	 * @param comisionPordescubierto the comisionPordescubierto to set
+	 */
+	public void setComisionPordescubierto(double comisionPordescubierto) {
+		this.comisionPordescubierto = comisionPordescubierto;
+	}
+
+	/**
+	 * @return the maximoDescubiertoPermitido
+	 */
+	public double getMaximoDescubiertoPermitido() {
+		return maximoDescubiertoPermitido;
+	}
+
+	/**
+	 * @param maximoDescubiertoPermitido the maximoDescubiertoPermitido to set
+	 */
+	public void setMaximoDescubiertoPermitido(double maximoDescubiertoPermitido) {
+		this.maximoDescubiertoPermitido = maximoDescubiertoPermitido;
+	}
+	
+
 }
