@@ -45,7 +45,7 @@ public class Principal {
 					System.out.print("Ingrese el IBAN: ");
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
-				} while (ibanValido);
+				} while (!ibanValido);
 				System.out.print("Saldo inicial: ");
 				saldo = scanner.nextDouble();
 				scanner.nextLine();
@@ -74,7 +74,7 @@ public class Principal {
 					double comisionDescubierto = scanner.nextDouble();
 					System.out.print("Ingrese el máximo por descubierto: ");
 					double maximoDescubierto = scanner.nextDouble();
-					
+
 					nuevaCuenta = new CuentaCorrienteEmpresa(titular, iban, saldo, "", interesDescubierto,
 							comisionDescubierto, maximoDescubierto);
 				} else {
@@ -102,14 +102,13 @@ public class Principal {
 					System.out.print("Ingrese el IBAN: ");
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
-				} while (ibanValido);
-				
-				if (b.informacionCuenta(iban) != null) {
-					
-				} else{
-					
+				} while (!ibanValido);
+				String resultado = b.informacionCuenta(iban);
+				if (resultado != null) {
+					System.out.println(resultado);
+				} else {
+					System.out.println("Cuenta no encontrada");
 				}
-				
 				break;
 
 			case 4:
@@ -120,7 +119,7 @@ public class Principal {
 					System.out.print("Ingrese el IBAN: ");
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
-				} while (ibanValido);
+				} while (!ibanValido);
 				b.ingresoCuenta(iban, saldo);
 				break;
 
@@ -132,7 +131,7 @@ public class Principal {
 					System.out.print("Ingrese el IBAN: ");
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
-				} while (ibanValido);
+				} while (!ibanValido);
 				b.retiradaCuenta(iban, saldo);
 				break;
 
@@ -141,14 +140,13 @@ public class Principal {
 					System.out.print("Ingrese el IBAN: ");
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
-				} while (ibanValido);
+				} while (!ibanValido);
 				b.obtenerSaldo(iban);
 				break;
 
 			case 7:
-				System.out.println("Gracias por su visita!");
+				System.out.println("Sesión finalizada!");
 				break;
-
 			default:
 				break;
 			}

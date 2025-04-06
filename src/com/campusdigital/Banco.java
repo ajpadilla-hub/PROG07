@@ -87,10 +87,8 @@ public class Banco {
 	public boolean retiradaCuenta(String iban, double saldo) {
 		CuentaBancaria cuentaBancaria = this.existeIban(iban);
 		if (cuentaBancaria != null) {
-			if (cuentaBancaria.getSaldo() > 0) {
-				cuentaBancaria.setSaldo(cuentaBancaria.getSaldo() - saldo);
+				cuentaBancaria.retirarSaldo(saldo);
 				return true;
-			}
 		}
 
 		return false;

@@ -38,10 +38,29 @@ public class CuentaAhorro extends CuentaBancaria {
 		this.tipoInteresAnual = tipoInteresAnual;
 	}
 
+	/**
+	 * Intenta retirar una cantidad de la cuenta de ahorro.
+	 *
+	 * @param cantidad La cantidad positiva a retirar.
+	 * @return true si la retirada fue exitosa, false si no hay saldo suficiente.
+	 */
 	@Override
 	public boolean retirarSaldo(double cantidad) {
-		// TODO Auto-generated method stub
-		return false;
+
+		if (cantidad <= 0) {
+			System.err.println("Error: La cantidad a retirar debe ser positiva.");
+			return false;
+		}
+
+		double saldoActual = getSaldo();
+		if (saldoActual >= cantidad) {
+
+			double nuevoSaldo = saldoActual - cantidad;
+			setSaldo(nuevoSaldo);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -49,8 +68,10 @@ public class CuentaAhorro extends CuentaBancaria {
 	 */
 	@Override
 	public String devolverInfoString() {
+		// Formateamos la salida para claridad y consistencia
 		return "Cuenta Ahorro: " + "Titular: " + getTitular().getNombre() + " " + getTitular().getApellidos() + ", "
-				+ "IBAN: " + getIban() + ", " + "Saldo: " + getSaldo() + "€, " + "Interés Anual: " + tipoInteresAnual
-				+ "%";
+				+ "IBAN: " + getIban() + ", " + "Saldo: " + String.format("%.2f", getSaldo()) + "€, " // Formato de
+																										// saldo
+				+ "Interés Anual: " + String.format("%.2f", tipoInteresAnual * 100) + "%"; // Mostrar como porcentaje
 	}
 }
