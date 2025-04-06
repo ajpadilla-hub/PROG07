@@ -141,7 +141,13 @@ public class Principal {
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
 				} while (!ibanValido);
-				b.obtenerSaldo(iban);
+				double resultadoSaldo = b.obtenerSaldo(iban);
+				if (resultadoSaldo != -1) {
+					System.out.println("Su saldo es de: " +resultadoSaldo +"€");
+				}else {
+					System.out.println("No se ha podido obtener el saldo");
+				}
+				
 				break;
 
 			case 7:
