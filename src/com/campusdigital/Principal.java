@@ -120,7 +120,12 @@ public class Principal {
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
 				} while (!ibanValido);
-				b.ingresoCuenta(iban, saldo);
+				boolean resultadoIngreso = b.ingresoCuenta(iban, saldo);
+				if (resultadoIngreso) {
+					System.out.println("Su operación se ha realizado con éxito");
+				} else {
+					System.out.println("No se ha podido realizar la operación");
+				}
 				break;
 
 			case 5:
@@ -132,7 +137,13 @@ public class Principal {
 					iban = scanner.nextLine();
 					ibanValido = validarIban(iban);
 				} while (!ibanValido);
-				b.retiradaCuenta(iban, saldo);
+				boolean resultadoRetirada = b.retiradaCuenta(iban, saldo);
+				if (resultadoRetirada) {
+					System.out.println("Su operación se ha realizado con éxito");
+				} else {
+					System.out.println("No se ha podido realizar la operación");
+				}
+
 				break;
 
 			case 6:
@@ -143,11 +154,11 @@ public class Principal {
 				} while (!ibanValido);
 				double resultadoSaldo = b.obtenerSaldo(iban);
 				if (resultadoSaldo != -1) {
-					System.out.println("Su saldo es de: " +resultadoSaldo +"€");
-				}else {
+					System.out.println("Su saldo es de: " + resultadoSaldo + "€");
+				} else {
 					System.out.println("No se ha podido obtener el saldo");
 				}
-				
+
 				break;
 
 			case 7:
@@ -157,7 +168,7 @@ public class Principal {
 				break;
 			}
 
-		} while (option != 0);
+		} while (option != 7);
 		scanner.close();
 	}
 

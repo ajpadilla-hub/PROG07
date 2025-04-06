@@ -87,8 +87,8 @@ public class Banco {
 	public boolean retiradaCuenta(String iban, double saldo) {
 		CuentaBancaria cuentaBancaria = this.existeIban(iban);
 		if (cuentaBancaria != null) {
-				cuentaBancaria.retirarSaldo(saldo);
-				return true;
+			return  cuentaBancaria.retirarSaldo(saldo);
+				
 		}
 
 		return false;
